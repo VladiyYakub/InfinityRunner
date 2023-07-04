@@ -1,0 +1,38 @@
+using System.Collections;
+using UnityEngine;
+
+public class PlatformGenerator : MonoBehaviour
+{
+    [SerializeField] private GameObject _platformPrefab;
+    [SerializeField] private float _spawnInterval = 1f;
+    [SerializeField] private float _platformSpeed = 5f;
+
+    private float timer = 0f;
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= _spawnInterval)
+        {
+            SpawnPlatform();
+            timer = 0f;
+        }
+    }
+
+    private void SpawnPlatform()
+    {
+        GameObject newPlatform = Instantiate(_platformPrefab, transform.position, Quaternion.identity);
+        StartCoroutine(MovePlatform(newPlatform));
+    }
+
+    private IEnumerator MovePlatform(GameObject platform)
+    {
+        while (true)
+        {
+            platform.transform.Translate(Vector3.back * _platformSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
+}
+
