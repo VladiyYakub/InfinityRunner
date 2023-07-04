@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject _platformPrefab;
+    [SerializeField] private GameObject[] _platformPrefabs;
     [SerializeField] private float _spawnInterval = 1f;
     [SerializeField] private float _platformSpeed = 5f;
 
@@ -22,7 +22,8 @@ public class PlatformGenerator : MonoBehaviour
 
     private void SpawnPlatform()
     {
-        GameObject newPlatform = Instantiate(_platformPrefab, transform.position, Quaternion.identity);
+        int randomIndex = Random.Range(0, _platformPrefabs.Length);
+        GameObject newPlatform = Instantiate(_platformPrefabs[randomIndex], transform.position, Quaternion.identity);
         StartCoroutine(MovePlatform(newPlatform));
     }
 
