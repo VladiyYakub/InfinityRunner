@@ -353,8 +353,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _platformPrefabs:
   - {fileID: 2363680616242147404, guid: 9a778f47f1d020f479fd8f1c91178db0, type: 3}
-  - {fileID: 2363680616242147404, guid: 83c86212e1e3593478beef216fd68341, type: 3}
-  - {fileID: 2363680616242147404, guid: b6e3ef2a344c7f047995e875f285c7e8, type: 3}
   _spawnInterval: 5
   _platformSpeed: 6
 --- !u!4 &818004985
@@ -480,6 +478,7 @@ GameObject:
   - component: {fileID: 979939491}
   - component: {fileID: 979939490}
   - component: {fileID: 979939492}
+  - component: {fileID: 979939494}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -643,3 +642,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &979939494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979939484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99c08282dd44e440b3ea865c35cfbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 3
