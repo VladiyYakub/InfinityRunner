@@ -58,14 +58,43 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.0f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Obstacle\Obstacle.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Player\Axis.cs" />
-    <Compile Include="Assets\Scripts\Platform\PlatformGenerator.cs" />
-    <Compile Include="Assets\Scripts\Player\PhysicsMovement.cs" />
-    <Compile Include="Assets\Scripts\Player\SurfaceSlider.cs" />
-    <Compile Include="Assets\Scripts\Obstacle\ObstacleTrigger.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\InfinityRunner\Scripts\Player\SurfaceSlider.cs" />
+    <Compile Include="Assets\OtherAssets\MobileWaterShader_EKV\Scripts\MobileWaterShader_EKV.cs" />
+    <Compile Include="Assets\OtherAssets\MobileWaterShader_EKV\Scripts\DisplayControl.cs" />
+    <Compile Include="Assets\InfinityRunner\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Scripts\U10PS_MouseRotation.cs" />
+    <Compile Include="Assets\InfinityRunner\Scripts\Player\PhysicsMovement.cs" />
+    <Compile Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Scripts\U10PS_SnowOverTime.cs" />
+    <Compile Include="Assets\InfinityRunner\Scripts\Player\Axis.cs" />
+    <Compile Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.cs" />
+    <Compile Include="Assets\OtherAssets\MobileWaterShader_EKV\Scripts\WaterControl_EKV.cs" />
+    <Compile Include="Assets\InfinityRunner\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Scripts\U10PS_ExampleReview.cs" />
+    <Compile Include="Assets\InfinityRunner\Scripts\Obstacle\ObstacleTrigger.cs" />
+    <Compile Include="Assets\InfinityRunner\Scripts\Platform\PlatformGenerator.cs" />
+    <Compile Include="Assets\InfinityRunner\Scripts\Obstacle\Obstacle.cs" />
+    <Compile Include="Assets\OtherAssets\MobileWaterShader_EKV\Scripts\SetValueOnStart.cs" />
+    <Compile Include="Assets\OtherAssets\MobileWaterShader_EKV\Scripts\SimpleRotation.cs" />
+    <Compile Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Scripts\U10PS_DissolveOverTime.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Edge Detection.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Grass Sway.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Blur.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.compute" />
+    <None Include="Assets\OtherAssets\MobileWaterShader_EKV\Shaders\MobileWaterShader_EKV.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Depth Mask Edge Detection.shader" />
+    <None Include="Assets\OtherAssets\MobileWaterShader_EKV\Documentation\Third-Party Notices.txt" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Ocean.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Dissolve.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Plasma.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Outline.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus Line.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Snow.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Lava3D.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Force Field.shader" />
+    <None Include="Assets\OtherAssets\Customizable Skybox\Stylized Sky\Shaders\Stylized Sky.shader" />
+    <None Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Shaders\Simple Sine Wave.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
