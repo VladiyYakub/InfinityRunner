@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4967205705649536343}
   - component: {fileID: 3366103686060013277}
   - component: {fileID: 5532215060928055757}
-  - component: {fileID: 7245713590308647497}
   m_Layer: 0
   m_Name: RedSphere
   m_TagString: Untagged
@@ -35,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 6743998981096442417}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5282005581141806550
 MeshFilter:
@@ -95,17 +94,9 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2542304803481497026}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5532215060928055757
@@ -120,19 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973c5bc7053adf040a95dac23c94c19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7245713590308647497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2542304803481497026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458ee04556ddea34b88beed656e16dda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
 --- !u!1 &9179915636449714059
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +141,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1868695921684000872}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &6195781756945186762
 Light:

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4256712140378880843}
   - component: {fileID: 5577688280825872761}
   - component: {fileID: 2945410706287460792}
-  - component: {fileID: -4248169399868028219}
   m_Layer: 0
   m_Name: HighBarrier
   m_TagString: Untagged
@@ -34,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2868394148960440500
 MeshFilter:
@@ -94,18 +93,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3410677878874316650}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2945410706287460792
 MonoBehaviour:
@@ -119,16 +110,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973c5bc7053adf040a95dac23c94c19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4248169399868028219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3410677878874316650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458ee04556ddea34b88beed656e16dda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1

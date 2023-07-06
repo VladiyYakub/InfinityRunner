@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,62 +9,50 @@ public class PlatformGenerator : MonoBehaviour
     [SerializeField] private float _spawnDistance;
     [SerializeField] private int _maxPlatforms;
     [SerializeField] private float _platformSpeed;
-    [SerializeField] private float _spawnInterval;
 
-    private List<GameObject> spawnedPlatforms = new List<GameObject>();
-    private float lastSpawnedPosition;
+    private List<GameObject> _spawnedPlatforms = new List<GameObject>();
+    private List<Coroutine> _coroutines = new List<Coroutine>();
 
     private void Start()
     {
-        lastSpawnedPosition = transform.position.z;
-        StartCoroutine(SpawnPlatformCoroutine());
-    }
-
-    private void Update()
-    {
-        if (transform.position.z - lastSpawnedPosition >= _spawnDistance)
-        {
-            SpawnPlatform();
-        }
-
-        if (spawnedPlatforms.Count > _maxPlatforms)
-        {
-            Destroy(spawnedPlatforms[0]);
-            spawnedPlatforms.RemoveAt(0);
-        }
+        SpawnPlatform();
     }
 
     private void SpawnPlatform()
     {
         GameObject newPlatform = Instantiate(_platformPrefab, transform.position, Quaternion.identity);
-        spawnedPlatforms.Add(newPlatform);
-        lastSpawnedPosition = transform.position.z;
+        var spawnCoroutine = StartCoroutine(MovePlatform(newPlatform, _spawnDistance, () => SpawnPlatform()));
 
-        StartCoroutine(MovePlatform(newPlatform));
-    }
+        _spawnedPlatforms.Add(newPlatform);
+        _coroutines.Add(spawnCoroutine);
 
-    private IEnumerator SpawnPlatformCoroutine()
-    {
-        while (true)
+        if (_spawnedPlatforms.Count > _maxPlatforms)
         {
-            yield return new WaitForSeconds(_spawnInterval);
-            SpawnPlatform();
+            StopCoroutine(_coroutines[0]);
+            Destroy(_spawnedPlatforms[0]);
+
+            _coroutines.RemoveAt(0);
+            _spawnedPlatforms.RemoveAt(0);
         }
     }
 
-    private IEnumerator MovePlatform(GameObject platform)
+    private IEnumerator MovePlatform(GameObject platform, float distance, Action onPlatformPassedDistance)
     {
-        Vector3 initialPosition = platform.transform.position;
-        float distanceTraveled = 0f;
+        var initialPosition = platform.transform.position;
+        var isDistancePassedEventSended = false;
 
-        while (distanceTraveled < _spawnDistance)
+        while (platform)
         {
             platform.transform.Translate(Vector3.back * _platformSpeed * Time.deltaTime);
-            distanceTraveled = Mathf.Abs(platform.transform.position.z - initialPosition.z);
+            var traveledDistance = Mathf.Abs(platform.transform.position.z - initialPosition.z);
+
+            if (!isDistancePassedEventSended && traveledDistance > distance)
+            {
+                isDistancePassedEventSended = true;
+                onPlatformPassedDistance?.Invoke();
+            }
+
             yield return null;
         }
-
-        platform.transform.position = initialPosition;
-        StartCoroutine(MovePlatform(platform));
     }
 }

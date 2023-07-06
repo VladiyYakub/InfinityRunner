@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5566956565647245308}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &6476443451286228724
 Light:
@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 7423586074569583361}
   - component: {fileID: 6154426524660757774}
   - component: {fileID: 4050473653814992997}
-  - component: {fileID: 7724666217694478248}
   m_Layer: 0
   m_Name: RedCapsule
   m_TagString: Untagged
@@ -129,7 +128,7 @@ Transform:
   m_Children:
   - {fileID: 1503194515321383059}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3416461022546929229
 MeshFilter:
@@ -189,17 +188,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6308652655308980347}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -216,16 +206,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973c5bc7053adf040a95dac23c94c19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7724666217694478248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6308652655308980347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458ee04556ddea34b88beed656e16dda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1

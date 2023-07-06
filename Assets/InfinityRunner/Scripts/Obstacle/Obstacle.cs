@@ -1,12 +1,12 @@
 using UnityEngine;
 public class Obstacle : MonoBehaviour
-{   
-    private void OnCollisionEnter(Collision collision)
+{
+    private void OnTriggerEnter(Collider other)
     {
-        IObstacleTrigger obstacleTrigger = collision.gameObject.GetComponent<IObstacleTrigger>();
+        IObstacleTrigger obstacleTrigger = other.GetComponent<IObstacleTrigger>();
         if (obstacleTrigger != null)
         {
             obstacleTrigger.ApplyDamage(1);
-        }       
+        }
     }
 }
