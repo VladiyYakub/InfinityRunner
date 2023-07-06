@@ -744,6 +744,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5740400974271749895, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -845,6 +849,10 @@ PrefabInstance:
       propertyPath: m_Shadows.m_NormalBias
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7130488423790625131, guid: f4adc850a7bc53e468cdb2c469e0fff6, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -943,6 +951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VioletSphere
       objectReference: {fileID: 0}
+    - target: {fileID: 9130202536759199326, guid: 8c83f211009dfc24bb08f5f37c042440, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1011,6 +1023,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631500657903695454, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5740400974271749895, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
+      propertyPath: _damage
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1114,6 +1130,10 @@ PrefabInstance:
       propertyPath: m_Shadows.m_NormalBias
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7130488423790625131, guid: f4adc850a7bc53e468cdb2c469e0fff6, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1211,6 +1231,10 @@ PrefabInstance:
     - target: {fileID: 6738170021434180049, guid: 8c83f211009dfc24bb08f5f37c042440, type: 3}
       propertyPath: m_Name
       value: VioletSphere (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130202536759199326, guid: 8c83f211009dfc24bb08f5f37c042440, type: 3}
+      propertyPath: _damage
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1310,6 +1334,10 @@ PrefabInstance:
       propertyPath: m_Shadows.m_NormalBias
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7130488423790625131, guid: f4adc850a7bc53e468cdb2c469e0fff6, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1378,6 +1406,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631500657903695454, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5740400974271749895, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
+      propertyPath: _damage
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1481,6 +1513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VioletSphere (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9130202536759199326, guid: 8c83f211009dfc24bb08f5f37c042440, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1549,6 +1585,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631500657903695454, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5740400974271749895, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
+      propertyPath: _damage
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1652,6 +1692,10 @@ PrefabInstance:
       propertyPath: m_Shadows.m_NormalBias
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7130488423790625131, guid: f4adc850a7bc53e468cdb2c469e0fff6, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1749,6 +1793,10 @@ PrefabInstance:
     - target: {fileID: 6171028826337371892, guid: f4adc850a7bc53e468cdb2c469e0fff6, type: 3}
       propertyPath: m_Shadows.m_NormalBias
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130488423790625131, guid: f4adc850a7bc53e468cdb2c469e0fff6, type: 3}
+      propertyPath: _damage
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1848,6 +1896,10 @@ PrefabInstance:
       propertyPath: m_Shadows.m_NormalBias
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7130488423790625131, guid: f4adc850a7bc53e468cdb2c469e0fff6, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1916,6 +1968,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631500657903695454, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5740400974271749895, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
+      propertyPath: _damage
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1989,6 +2045,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631500657903695454, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5740400974271749895, guid: e7a6f10dfee46a74e908ef9b6b9b7817, type: 3}
+      propertyPath: _damage
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

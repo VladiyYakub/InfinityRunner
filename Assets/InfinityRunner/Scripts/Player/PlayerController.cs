@@ -1,16 +1,16 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IObstacleTrigger
 {
-    [SerializeField] private int _health;
+    [SerializeField] private int health = 3;
 
     public void ApplyDamage(int damage)
     {
-        _health -= damage;
+        health -= damage;
 
-        if (_health <= 0)
-        {
+        if (health <= 0)
+        {           
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.buildIndex);
         }

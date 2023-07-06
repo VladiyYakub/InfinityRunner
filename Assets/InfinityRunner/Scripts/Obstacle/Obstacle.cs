@@ -1,11 +1,12 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class Obstacle : MonoBehaviour
-{
-    public void ApplyDamage(int damage)
-    {        
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.buildIndex);
+{   
+    private void OnCollisionEnter(Collision collision)
+    {
+        IObstacleTrigger obstacleTrigger = collision.gameObject.GetComponent<IObstacleTrigger>();
+        if (obstacleTrigger != null)
+        {
+            obstacleTrigger.ApplyDamage(1);
+        }       
     }
 }

@@ -6,13 +6,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        float horizontal = Input.GetAxis(Axis.Horizontal);
-        //float vertical = Input.GetAxis(Axis.Vertical);       
-
-        //_movement.Move(new Vector3(horizontal, 0, vertical));
+        float horizontal = Input.GetAxis(Axis.Horizontal);      
 
         _movement.Move(new Vector3(horizontal, 0, 0));
-
-
     }
 }

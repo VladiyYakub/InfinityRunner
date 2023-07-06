@@ -75,6 +75,7 @@
     <Compile Include="Assets\InfinityRunner\Scripts\Obstacle\Obstacle.cs" />
     <Compile Include="Assets\OtherAssets\MobileWaterShader_EKV\Scripts\SetValueOnStart.cs" />
     <Compile Include="Assets\OtherAssets\MobileWaterShader_EKV\Scripts\SimpleRotation.cs" />
+    <Compile Include="Assets\InfinityRunner\Scripts\Interface\IObstacleTrigger.cs" />
     <Compile Include="Assets\OtherAssets\Ultimate 10 Plus Shaders\Scripts\U10PS_DissolveOverTime.cs" />
   </ItemGroup>
   <ItemGroup>

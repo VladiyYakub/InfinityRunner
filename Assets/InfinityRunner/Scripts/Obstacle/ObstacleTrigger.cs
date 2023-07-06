@@ -1,8 +1,9 @@
 using UnityEngine;
-
-public class ObstacleTrigger : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class ObstacleTrigger : MonoBehaviour, IObstacleTrigger
 {
-    [SerializeField] private int _damage;
+    [SerializeField] private int _damage = 1;
+
     private void OnTriggerEnter(Collider other)
     {
         PlayerController player = other.GetComponent<PlayerController>();
@@ -10,5 +11,10 @@ public class ObstacleTrigger : MonoBehaviour
         {
             player.ApplyDamage(_damage);
         }
+    }
+    public void ApplyDamage(int damage)
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
     }
 }
