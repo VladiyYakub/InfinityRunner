@@ -757,12 +757,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62e33c5ded70db4c9d5b5448d5b4c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _platformPrefabs:
-  - {fileID: 2363680616242147404, guid: 9a778f47f1d020f479fd8f1c91178db0, type: 3}
-  - {fileID: 2363680616242147404, guid: 83c86212e1e3593478beef216fd68341, type: 3}
-  - {fileID: 2363680616242147404, guid: b6e3ef2a344c7f047995e875f285c7e8, type: 3}
-  _spawnInterval: 5
+  _platformPrefab: {fileID: 2363680616242147404, guid: 9a778f47f1d020f479fd8f1c91178db0, type: 3}
+  _spawnDistance: 40
+  _maxPlatforms: 100
   _platformSpeed: 6
+  _spawnInterval: 8
 --- !u!4 &818004985
 Transform:
   m_ObjectHideFlags: 0
@@ -1063,7 +1062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99c08282dd44e440b3ea865c35cfbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  health: 3
 --- !u!1 &1015566225
 GameObject:
   m_ObjectHideFlags: 0
