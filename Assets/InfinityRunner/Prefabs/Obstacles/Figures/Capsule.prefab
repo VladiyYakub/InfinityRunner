@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 6154426524660757774}
   - component: {fileID: 4050473653814992997}
   m_Layer: 0
-  m_Name: RedCapsule
+  m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
