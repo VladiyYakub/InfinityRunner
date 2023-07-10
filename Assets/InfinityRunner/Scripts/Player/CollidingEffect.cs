@@ -1,31 +1,46 @@
 using UnityEngine;
+using System.Collections;
 
-public class CollidingEffect: MonoBehaviour
+public class CollidingEffect : MonoBehaviour, IObstacleTrigger
 {
-    [SerializeField] private Material _troquseMaterial;
-    [SerializeField] private Material _redMaterial;
+    [SerializeField] private Material _defaultMaterial;
+    [SerializeField] private Material _damagedMaterial;
 
     private Renderer _renderer;
-    private bool _isSwitched = false;
+    private Coroutine _coroutine;
 
     private void Start()
     {
         _renderer = GetComponent<Renderer>();
-        _renderer.material = _redMaterial;
+        _renderer.material = _defaultMaterial;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void ApplyDamage(int damage)
     {
-        if (!_isSwitched)
+        if (_coroutine != null)
         {
-            _isSwitched = true;
-            _renderer.material = _troquseMaterial;
+            StopCoroutine(_coroutine);
         }
-        else
-        {
-            _isSwitched = false;
-            _renderer.material = _redMaterial;
-        }
+
+        _coroutine = StartCoroutine(ChangeMaterialCoroutine(damage));
+    }
+
+    private IEnumerator ChangeMaterialCoroutine(int damage)
+    {
+        _renderer.material = _damagedMaterial;
+        yield return new WaitForSeconds(damage);
+        _renderer.material = _defaultMaterial;
+        _coroutine = null;
     }
 }
+
+
+
+
+
+
+
+
+
+
 

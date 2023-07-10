@@ -9,13 +9,17 @@ public class PlatformGenerator : MonoBehaviour
     [SerializeField] private float _spawnDistance;
     [SerializeField] private int _maxPlatforms;
     [SerializeField] private float _platformSpeed;
+    [SerializeField] private int  _prespawnCount;
 
     private List<GameObject> _spawnedPlatforms = new List<GameObject>();
     private List<Coroutine> _coroutines = new List<Coroutine>();
 
     private void Start()
     {
-        SpawnPlatform();
+        for (int i = 0; i < _prespawnCount; i++)
+        {
+            SpawnPlatform();
+        }
     }
 
     private void SpawnPlatform()
@@ -51,10 +55,10 @@ public class PlatformGenerator : MonoBehaviour
                 isDistancePassedEventSended = true;
                 onPlatformPassedDistance?.Invoke();
             }
-
             yield return null;
         }
     }
 }
+
 
 
