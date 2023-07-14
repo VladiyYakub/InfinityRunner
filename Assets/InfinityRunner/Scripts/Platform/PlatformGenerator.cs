@@ -9,7 +9,7 @@ public class PlatformGenerator : MonoBehaviour
     [SerializeField] private float _spawnDistance;
     [SerializeField] private int _maxPlatforms;
     [SerializeField] private float _platformSpeed;
-    [SerializeField] private int  _prespawnCount;
+    [SerializeField] private int _prespawnCount;
 
     private List<GameObject> _spawnedPlatforms = new List<GameObject>();
     private List<Coroutine> _coroutines = new List<Coroutine>();
@@ -18,14 +18,18 @@ public class PlatformGenerator : MonoBehaviour
     {
         for (int i = 0; i < _prespawnCount; i++)
         {
-            SpawnPlatform();
+            Vector3 offset = new Vector3(0f, 0f, _spawnDistance * (i + 1));
+            bool isLoopSpawn = false;
+            SpawnPlatform(offset, false);
         }
+
+        SpawnPlatform(Vector3.zero);
     }
 
-    private void SpawnPlatform()
+    private void SpawnPlatform(Vector3 offset, bool isLoopSpawn = true)
     {
-        GameObject newPlatform = Instantiate(_platformPrefab, transform.position, Quaternion.identity);
-        var spawnCoroutine = StartCoroutine(MovePlatform(newPlatform, _spawnDistance, () => SpawnPlatform()));
+        GameObject newPlatform = Instantiate(_platformPrefab, transform.position + offset, Quaternion.identity);
+        var spawnCoroutine = StartCoroutine(MovePlatform(newPlatform, _spawnDistance, null));
 
         _spawnedPlatforms.Add(newPlatform);
         _coroutines.Add(spawnCoroutine);
@@ -43,22 +47,19 @@ public class PlatformGenerator : MonoBehaviour
     private IEnumerator MovePlatform(GameObject platform, float distance, Action onPlatformPassedDistance)
     {
         var initialPosition = platform.transform.position;
-        var isDistancePassedEventSended = false;
+        var isDistancePassedEventSent = false;
 
         while (platform)
         {
             platform.transform.Translate(Vector3.back * _platformSpeed * Time.deltaTime);
             var traveledDistance = Mathf.Abs(platform.transform.position.z - initialPosition.z);
 
-            if (!isDistancePassedEventSended && traveledDistance > distance)
+            if (!isDistancePassedEventSent && traveledDistance > distance)
             {
-                isDistancePassedEventSended = true;
+                isDistancePassedEventSent = true;
                 onPlatformPassedDistance?.Invoke();
             }
             yield return null;
         }
     }
 }
-
-
-
