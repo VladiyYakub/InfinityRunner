@@ -28,7 +28,7 @@ public class CollidingEffect : MonoBehaviour, IObstacleTrigger
     private IEnumerator ChangeMaterialCoroutine(int damage)
     {
         _renderer.material = _damagedMaterial;
-        yield return new WaitForSeconds(123);
+        yield return new WaitForSeconds(0.5f);
         _renderer.material = _defaultMaterial;
         _coroutine = null;
     }
