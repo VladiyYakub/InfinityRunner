@@ -15,7 +15,7 @@ public class Player : MonoBehaviour, IObstacleTrigger
     {
         _hpSlider = hpSlider;
         _currentHealth = _maxHealth;
-        UpdateHP();
+        _hpSlider.SetHP(_currentHealth, _maxHealth);
     }
 
     public void ApplyDamage(int damage)
@@ -27,14 +27,7 @@ public class Player : MonoBehaviour, IObstacleTrigger
         {
             Destroy(gameObject);
         }
-    }
 
-    private void UpdateHP()
-    {
-        if (_hpSlider != null)
-        {
-            float normalizedHP = (float)_currentHealth / _maxHealth;
-            _hpSlider.SetHP(normalizedHP);
-        }
+        _hpSlider.SetHP(_currentHealth);
     }
 }

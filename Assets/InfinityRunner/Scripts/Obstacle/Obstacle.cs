@@ -3,10 +3,13 @@ public class Obstacle : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        IObstacleTrigger obstacleTrigger = other.GetComponent<IObstacleTrigger>();
-        if (obstacleTrigger != null)
+        IObstacleTrigger[] obstacleTriggers = other.GetComponents<IObstacleTrigger>();
+        if (obstacleTriggers != null)
         {
-            obstacleTrigger.ApplyDamage(1);
+            foreach (var obstacleTrigger in obstacleTriggers)
+            {
+                obstacleTrigger.ApplyDamage(1);
+            }
         }
     }
 }
