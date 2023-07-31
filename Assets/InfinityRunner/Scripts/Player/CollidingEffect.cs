@@ -33,14 +33,3 @@ public class CollidingEffect : MonoBehaviour, IObstacleTrigger
         _coroutine = null;
     }
 }
-
-
-
-
-
-
-
-
-
-
-

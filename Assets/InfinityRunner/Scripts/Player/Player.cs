@@ -1,9 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IObstacleTrigger
 {
+    [Header("Health")]
     [SerializeField] private int _maxHealth;
+    [Header("Movement")]
+    [SerializeField] private Movement _movement;
+    [SerializeField] private float _speed;
 
     private int _currentHealth;
 
@@ -18,6 +23,20 @@ public class Player : MonoBehaviour, IObstacleTrigger
         _hpSlider.SetHP(_currentHealth, _maxHealth);
     }
 
+    private void Update()
+    {
+        float horizontal = Input.GetAxis(Axis.Horizontal);
+
+        if (horizontal == 0f)
+        {
+            _movement.StopMove();
+        }
+        else
+        {
+            _movement.Move(new Vector3(horizontal, 0, 0), _speed);
+        }
+    }
+
     public void ApplyDamage(int damage)
     {
         _currentHealth -= damage;
@@ -25,7 +44,8 @@ public class Player : MonoBehaviour, IObstacleTrigger
 
         if (_currentHealth <= 0)
         {
-            Destroy(gameObject);
+            var currentScene = SceneManager.GetActiveScene(); 
+            SceneManager.LoadScene(currentScene.buildIndex);
         }
 
         _hpSlider.SetHP(_currentHealth);

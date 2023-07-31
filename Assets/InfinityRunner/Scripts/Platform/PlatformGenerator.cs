@@ -1,25 +1,29 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour
 {
+
     [SerializeField] private GameObject _platformPrefab;
+    [SerializeField] private GameObject _emptyplatformPrefab;
+
     [SerializeField] private float _spawnDistance;
     [SerializeField] private int _maxPlatforms;
     [SerializeField] private float _platformSpeed;
     [SerializeField] private int _prespawnCount;
 
+    [SerializeField] private int _emptyPlatformsPrespawnCount;
+
     private List<GameObject> _spawnedPlatforms = new List<GameObject>();
     private List<Coroutine> _coroutines = new List<Coroutine>();
 
     private void Start()
-    {
-        for (int i = 0; i < _prespawnCount; i++)
+    {        
+        for (int i = _prespawnCount; i > 0; i--)
         {
-            Vector3 offset = new Vector3(0f, 0f, _spawnDistance * (i + 1));
-            bool isLoopSpawn = false;
+            Vector3 offset = new Vector3(0f, 0f, -_spawnDistance * i);            
             SpawnPlatform(offset, false);
         }
 
@@ -28,11 +32,33 @@ public class PlatformGenerator : MonoBehaviour
 
     private void SpawnPlatform(Vector3 offset, bool isLoopSpawn = true)
     {
-        GameObject newPlatform = Instantiate(_platformPrefab, transform.position + offset, Quaternion.identity);
-        var spawnCoroutine = StartCoroutine(MovePlatform(newPlatform, _spawnDistance, null));
+        GameObject newPlatform = null;
 
-        _spawnedPlatforms.Add(newPlatform);
+        if (_emptyPlatformsPrespawnCount >0)
+        {
+             newPlatform = Instantiate(_emptyplatformPrefab,  transform.position + offset, Quaternion.identity);
+
+            _emptyPlatformsPrespawnCount--;
+        }
+        else
+        {
+            newPlatform = Instantiate(_platformPrefab, transform.position + offset, Quaternion.identity);
+        }        
+
+        Coroutine spawnCoroutine = null;
+
+        if (isLoopSpawn)
+        {
+            spawnCoroutine = StartCoroutine(MovePlatform(newPlatform, _spawnDistance, () => SpawnPlatform(offset)));
+        }
+        else
+        {
+            spawnCoroutine = StartCoroutine(MovePlatform(newPlatform, _spawnDistance, null));
+        }
+       
+
         _coroutines.Add(spawnCoroutine);
+        _spawnedPlatforms.Add(newPlatform);
 
         if (_spawnedPlatforms.Count > _maxPlatforms)
         {
